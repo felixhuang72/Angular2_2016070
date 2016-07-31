@@ -46,7 +46,7 @@ modifySubmit_OneWay(e, value){
 }
 
   ngOnInit() {
-    //資料綁定後，進行初始化
+    //Input Binding 後，才進行初始化
     this.inputText = this.title;
   }
 
