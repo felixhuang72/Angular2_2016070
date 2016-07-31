@@ -16,7 +16,5 @@ export class AppComponent {
   constructor(private searchsvc: SearchService) { }
 
   title = 'App works!';
-  data : any;
-
-
+  data: any;
 }

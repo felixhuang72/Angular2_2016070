@@ -9,17 +9,17 @@ import { SearchService } from '../search.service';
 })
 export class SearchComponent implements OnInit {
 
-  keyword : string;
+  keyword: string;
 
   @Output()
   onSearch = new EventEmitter<string>();
 
-  constructor(private searchsvc : SearchService) { }
+  constructor(private searchsvc: SearchService) { }
 
   ngOnInit() {
   }
 
-  doSearch(){
+  doSearch() {
     this.searchsvc.doSearch(this.keyword);
   }
 
