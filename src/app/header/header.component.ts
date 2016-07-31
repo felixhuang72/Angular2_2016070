@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['header.component.css']
 })
 export class HeaderComponent implements OnInit {
-title = '<i>appssss works!</i>';
+title = 'App works!';
 inputText = this.title;
 titlelink = 'http://tw.yahoo.com';
 linkTarget = '_blank';
@@ -24,8 +24,17 @@ PlusOne(){
 modifySubmit(e){
   if(e.keyCode==13)
   {
+    //console.log($event)
     this.title = this.inputText;
 
+  }
+}
+
+modifySubmit_OneWay(e, value){
+  if(e.keyCode==13)
+  {
+    //console.log($event)
+    this.title = value;
   }
 }
 
