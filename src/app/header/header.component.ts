@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
 
 @Component({
   moduleId: module.id,
@@ -6,11 +6,14 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: 'header.component.html',
   styleUrls: ['header.component.css']
 })
+
 export class HeaderComponent implements OnInit {
-title = 'App works!';
+
+@Input()
+title:string;
+
 isEdit = false;
 inputText = this.title;
-// titlelink = '';//'http://tw.yahoo.com';
 linkTarget = '_blank';
 num = 1;
 num2 = 1;
@@ -43,6 +46,8 @@ modifySubmit_OneWay(e, value){
 }
 
   ngOnInit() {
+    //資料綁定後，進行初始化
+    this.inputText = this.title;
   }
 
 }
