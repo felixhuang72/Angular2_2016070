@@ -12,10 +12,22 @@ import { SearchComponent } from './search';
 })
 export class AppComponent {
 
+  ngOnInit() {
+    this.data = this.data_default;
+  }
+
   title = 'App works!';
+  data : any;
+
+  doSearch(keyword){
+    this.data = this.data_default.filter(value => {
+        return value.title.toLowerCase().indexOf(keyword.toLowerCase()) > -1;
+    });
+  }
 
 
-  data = [
+
+  data_default = [
     {
       "href": "http://blog.miniasp.com/post/2016/04/30/Visual-Studio-Code-from-Command-Prompt-notes.aspx",
       "title": "從命令提示字元中開啟 Visual Studio Code 如何避免顯示惱人的偵錯訊息",
