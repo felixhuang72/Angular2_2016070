@@ -29,7 +29,7 @@
           <img src="/assets/images/logo.png" (mouseover)="num = num+1" class="pull-left logo" [title]=title>
           <hgroup class="pull-left">
             <h1><a *ngIf="!isEdit" (dblclick)="ModifyTitle()" [target]=linkTarget [innerHtml]=title></a>
-            <input type="text" *ngIf="isEdit" (keyup)="modifySubmit_OneWay($event, EditTitle.value)" #EditTitle [value] = inputText />
+            <input type="text" *ngIf="isEdit" [value]="title" (keyup)="modifySubmit_OneWay($event, EditTitle.value)" #EditTitle [value] = inputText />
             </h1>
             <!--<h1><a [href]=titlelink>{{title}}</a></h1>-->
             <!--若 Num 為整數，套用 subtitle 類別-->

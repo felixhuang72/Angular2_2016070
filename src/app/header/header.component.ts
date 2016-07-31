@@ -32,7 +32,6 @@ modifySubmit(e){
   {
     //console.log($event)
     this.title = this.inputText;
-
   }
 }
 
@@ -46,7 +45,7 @@ modifySubmit_OneWay(e, value){
 }
 
   ngOnInit() {
-    //Input Binding 後，才進行初始化
+    // //Input Binding 後，才進行初始化
     this.inputText = this.title;
   }
 
