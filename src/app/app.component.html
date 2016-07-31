@@ -7,7 +7,7 @@
           <div id="ctl00_cphBody_divError"></div>
           <div id="ctl00_cphBody_PostList1_posts" class="posts">
             <!-- Article START-->
-           <app-article *ngFor="let item of data" [item]="item"></app-article>
+           <app-article *ngFor="let item of searchsvc.data" [item]="item"></app-article>
             <!-- Article END-->
           </div>
         </section>
@@ -18,7 +18,8 @@
           <div id="widgetzone_be_WIDGET_ZONE" class="widgetzone">
 
             <!-- Search START-->
-           <app-search (onSearch)="doSearch($event)"></app-search>
+           <!--<app-search (onSearch)="doSearch($event)"></app-search>-->
+           <app-search></app-search>
             <!-- Search END -->
 
             <!-- Calendar START -->
