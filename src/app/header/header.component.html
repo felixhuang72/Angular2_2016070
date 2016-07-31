@@ -34,7 +34,9 @@
               <a href="#" (click) = "PlusOne()">+{{num}}</a> |
               <a href="#" (click)="num2=num2+1">+{{num2}}</a>"
             </h3>
-            <input type="text" [(ngModel)]="title" />
+
+            <input type="text" [(ngModel)]=inputText (keyup)='modifySubmit($event)' />
+            <!--<input type="text" [(ngModel)]="title" />-->
           </hgroup>
           <div id="social-icons" class="pull-right social-icon">
             <a href="https://www.facebook.com/will.fans" title="Will 保哥的技術交流中心" [target]=linkTarget>
