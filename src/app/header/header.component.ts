@@ -8,14 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 title = 'App works!';
+isEdit = false;
 inputText = this.title;
-titlelink = 'http://tw.yahoo.com';
+// titlelink = '';//'http://tw.yahoo.com';
 linkTarget = '_blank';
 num = 1;
 num2 = 1;
 constructor() { }
 
-
+ModifyTitle(){
+  this.isEdit = true;
+}
 
 PlusOne(){
   this.num = this.num +1;
@@ -35,6 +38,7 @@ modifySubmit_OneWay(e, value){
   {
     //console.log($event)
     this.title = value;
+    this.isEdit = false;
   }
 }
 

@@ -28,7 +28,9 @@
         <div class="container">
           <img src="/assets/images/logo.png" (mouseover)="num = num+1" class="pull-left logo" [title]=title>
           <hgroup class="pull-left">
-            <h1><a [href]=titlelink [target]=linkTarget [innerHtml]=title></a></h1>
+            <h1><a *ngIf="!isEdit" (dblclick)="ModifyTitle()" [target]=linkTarget [innerHtml]=title></a>
+            <input type="text" *ngIf="isEdit" (keyup)="modifySubmit_OneWay($event, EditTitle.value)" #EditTitle [value] = inputText />
+            </h1>
             <!--<h1><a [href]=titlelink>{{title}}</a></h1>-->
             <h3 class="subtitle">記載著 Will 在網路世界的學習心得與技術分享
               <a href="#" (click) = "PlusOne()">+{{num}}</a> |
@@ -49,7 +51,7 @@
             <input type="text" [(ngModel)]=inputText (keyup)='modifySubmit($event)' />
             <!--單向綁定方法-->
             One-way binding:
-            <input type="text" #EditTitle [value]= inputText (keyup)='modifySubmit_OneWay($event, EditTitle.value)' />
+            <input type="text" #EditTitle2 [value]= inputText (keyup)='modifySubmit_OneWay($event, EditTitle2.value)' />
 
             <!--###############################################################################-->
 
